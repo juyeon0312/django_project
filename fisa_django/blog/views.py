@@ -1,6 +1,11 @@
 from django.shortcuts import render
 from .models import Post
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView, CreateView
+
+class PostCreate(CreateView):
+    model = Post
+    fields = ["title", "content", "head_image", "tag"]
+
 
 
 
@@ -30,3 +35,12 @@ def about_me(request):
         request,
         'blog/about_me.html',
     )
+
+
+class PostDetail(DetailView):   #post_list.html, post-list
+    model = Post 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["now"] = '임의로 가져온 변수'
+        print(context["now"])
+        return context

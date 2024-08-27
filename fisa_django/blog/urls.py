@@ -7,4 +7,6 @@ urlpatterns = [
     path('', views.index), # 없는 경로를 호출하고 있음 
     path('post-list', views.PostList.as_view()), 
     path('about-me', views.about_me), 
+    path('<int:pk>', views.PostDetail.as_view()), #<자료형: 필드명>
+    path('create-post/', views.PostCreate.as_view())
 ]
