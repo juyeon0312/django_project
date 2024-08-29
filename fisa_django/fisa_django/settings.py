@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'allauth', #
     'allauth.account',
     #'allauth.socialaccount.providers.naver',
+    'crispy_forms',
+    "crispy_bootstrap5",
 ]
 
 MIDDLEWARE = [
@@ -154,3 +156,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, '_media')
 
 
 LOGIN_REDIRECT_URL = 'blog_app:post_list' #로그인 성공시 보내줄 리다이렉트 주소
+
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"

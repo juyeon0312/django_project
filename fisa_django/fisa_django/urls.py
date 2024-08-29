@@ -24,7 +24,9 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("blog/", include('blog.urls')), #localhost:8000/blog/실제blog/
     #path("account/", include('account.urls')),
-    path('accounts/', include('allauth.urls'))
+    path('accounts/', include('allauth.urls')),
+    path('', include('blog.urls'))
+    #path('', include('accounts/signup'))
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
