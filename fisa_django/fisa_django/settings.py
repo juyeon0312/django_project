@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     #'allauth.socialaccount.providers.naver',
     'crispy_forms',
     "crispy_bootstrap5",
+     "debug_toolbar",
 ]
 
 MIDDLEWARE = [
@@ -59,6 +60,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     # Add the account middleware:
     "allauth.account.middleware.AccountMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 
 ]
 
@@ -161,3 +163,8 @@ LOGIN_REDIRECT_URL = 'blog_app:post_list' #로그인 성공시 보내줄 리다�
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
